@@ -42,11 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuActions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDelegates.cs" />
+    <Compile Include="TestInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus. Interfaces\Ex04.Menus. Interfaces.csproj">
+      <Project>{54e28ce0-63ca-405a-9165-0338213de5e1}</Project>
+      <Name>Ex04.Menus. Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ex04.Menus.Delegates\Ex04.Menus.Delegates.csproj">
+      <Project>{566629c9-1401-4441-a30b-26123fed81e6}</Project>
+      <Name>Ex04.Menus.Delegates</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

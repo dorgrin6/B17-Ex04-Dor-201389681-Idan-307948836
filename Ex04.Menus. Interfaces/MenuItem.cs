@@ -6,6 +6,11 @@
 
         private string m_Title;
 
+        public MenuItem(string i_Title)
+        {
+            m_Title = i_Title;
+        }
+
         public MenuItem ParentMenuItem
         {
             get

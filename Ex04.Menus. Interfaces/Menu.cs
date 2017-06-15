@@ -21,6 +21,7 @@
 
         private readonly string r_QuitString;
 
+
         public Menu(string i_Title, eMenuType i_MenuType, int i_SubMenusAmount)
             : base(i_Title)
         {
@@ -86,14 +87,16 @@
                 Console.WriteLine("Please choose one of the options:");
                 Console.WriteLine(this.GetLayout());
                 userChoice = getValidUserInput();
+                int trueIndex = userChoice - 1;
+
                 if (userChoice == k_UserQuitIndex)
                 {
                     menuSession = eMenuSession.UserQuit;
                 }
                 else
                 {
-                    m_MenuItems[userChoice - 1].Show();
-                    if (this.m_MenuItems[userChoice - 1] is MenuAction)
+                    m_MenuItems[trueIndex].Show();
+                    if (m_MenuItems[trueIndex] is MenuAction)
                     {
                         Console.WriteLine("Press any key to continue...");
                         Console.ReadKey();
@@ -111,7 +114,8 @@
             do
             {
                 string input = Console.ReadLine();
-                validInput = int.TryParse(input, out result);
+                validInput = int.TryParse(input, out result)
+                             && (result >= k_UserQuitIndex && result <= m_MenuItems.Count);
 
                 if (!validInput)
                 {

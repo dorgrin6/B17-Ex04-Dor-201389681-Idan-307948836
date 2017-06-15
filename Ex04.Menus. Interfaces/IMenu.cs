@@ -2,6 +2,6 @@
 {
     public interface IMenu
     {
-        string ShowLayout();
+        string getLayout();
     }
 }

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAction.cs" />
     <Compile Include="MenuAction.cs" />
     <Compile Include="IActionObserver.cs" />
     <Compile Include="IMenu.cs" />

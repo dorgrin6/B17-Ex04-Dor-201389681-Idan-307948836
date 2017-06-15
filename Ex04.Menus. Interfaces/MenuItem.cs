@@ -1,6 +1,6 @@
 ﻿namespace Ex04.Menus.Interfaces
 {
-    public class MenuItem
+    public abstract class MenuItem
     {
         private MenuItem m_ParentMenuItem;
 
@@ -9,6 +9,10 @@
         public MenuItem(string i_Title)
         {
             m_Title = i_Title;
+        }
+
+        public MenuItem()
+        {
         }
 
         public MenuItem ParentMenuItem
@@ -34,5 +38,7 @@
                 m_Title = value;
             }
         }
+
+        public abstract void Show();
     }
 }

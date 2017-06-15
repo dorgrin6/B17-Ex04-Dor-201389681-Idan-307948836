@@ -1,31 +1,33 @@
-﻿using System;
-
-namespace Ex04.Menus.Test
+﻿namespace Ex04.Menus.Test
 {
+    using System;
+
     public static class Actions
     {
-        public static void DisplayVersion()
+        public static void CharsCount()
         {
-            Console.WriteLine("App Version: 17.2.4.0");
+            int result;
+
+            result = GetUserInput().Length;
+            Console.WriteLine("Your sentence have {0} chars.", result);
         }
 
         public static void CountSpaces()
         {
             int result;
 
-            result = getUserInput().Split(' ').Length - 1;
+            result = GetUserInput().Split(' ').Length - 1;
             Console.WriteLine("Your sentence have {0} times the char '{1}'.", result, ' ');
         }
 
-        public static void CharsCount()
+        public static void DisplayVersion()
         {
-            int result;
-
-            result = getUserInput().Length;
-            Console.WriteLine("Your sentence have {0} chars.", result);
+            Console.WriteLine("App Version: 17.2.4.0");
         }
 
-        private static string getUserInput()
+        //TODO: changed from private to public
+        
+        public static string GetUserInput()
         {
             string input;
 
@@ -34,18 +36,18 @@ namespace Ex04.Menus.Test
             return input;
         }
 
-        public static void ShowTime()
-        {
-            DateTime time = DateTime.Now;
-
-            Console.WriteLine("The time now is: {0}:{1}:{2}", time.Hour, time.Minute, time.Second);
-        }
-
         public static void ShowDate()
         {
             DateTime time = DateTime.Now;
 
             Console.WriteLine("The date today is: {0}/{1}/{2}", time.Day, time.Month, time.Year);
+        }
+
+        public static void ShowTime()
+        {
+            DateTime time = DateTime.Now;
+
+            Console.WriteLine("The time now is: {0}:{1}:{2}", time.Hour, time.Minute, time.Second);
         }
     }
 }

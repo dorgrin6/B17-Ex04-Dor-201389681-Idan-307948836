@@ -59,7 +59,7 @@
             m_MenuItems.Add(i_MenuItem);
         }
 
-        public string getLayout()
+        public string GetLayout()
         {
             int index = 1;
 
@@ -84,7 +84,7 @@
                 Console.Clear();
                 showTitle();
                 Console.WriteLine("Please choose one of the options:");
-                Console.WriteLine(getLayout());
+                Console.WriteLine(this.GetLayout());
                 userChoice = getValidUserInput();
                 if (userChoice == k_UserQuitIndex)
                 {
@@ -93,8 +93,11 @@
                 else
                 {
                     m_MenuItems[userChoice - 1].Show();
-                    Console.WriteLine("Press any key to continue...");
-                    Console.ReadKey();
+                    if (this.m_MenuItems[userChoice - 1] is MenuAction)
+                    {
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                    }
                 }
             }
             while (menuSession != eMenuSession.UserQuit);

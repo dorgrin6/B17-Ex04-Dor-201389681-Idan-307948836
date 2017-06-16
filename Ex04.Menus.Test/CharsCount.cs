@@ -10,7 +10,7 @@ namespace Ex04.Menus.Test
             int result;
 
             result = Actions.GetUserInput().Length;
-            Console.WriteLine("Your sentence have {0} chars.", result);
+            Console.WriteLine("Your sentence contains {0} chars.", result);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Ex04.Menus.Test
             int result;
 
             result = Actions.GetUserInput().Split(' ').Length - 1;
-            Console.WriteLine("Your sentence have {0} times the char '{1}'.", result, ' ');
+            Console.WriteLine("Your sentence contains {0} spaces", result);
         }
     }
 }

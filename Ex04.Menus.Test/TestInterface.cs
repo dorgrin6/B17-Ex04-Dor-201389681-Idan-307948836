@@ -48,7 +48,7 @@
         private void buildMenu()
         {
             Menu subMenuActionInfo, subMenuDateTime, subActions;
-            m_MainMenu = new Menu(MenuStrings.k_MainMenu, Menu.eMenuType.MainMenu, 2);
+            m_MainMenu = new Menu(MenuStrings.k_MainMenu + " Interfaces", Menu.eMenuType.MainMenu, 2);
             subMenuActionInfo = createSubMenu(MenuStrings.k_ActionsAndInfo, 2, m_MainMenu);
             subMenuDateTime = createSubMenu(MenuStrings.k_ShowDateOrTime, 2, m_MainMenu);
             createAction(new DisplayVersion(), MenuStrings.k_DisplayVersion, subMenuActionInfo);

@@ -12,6 +12,12 @@
 
         private const int k_UserQuitIndex = 0;
 
+        private const string k_ChooseOption = "Please choose one of the options:";
+
+        private const string k_ReturnToMain = "Press any key to return to main...";
+
+        private const string k_TryAgian = "Please try again.";
+
         private const string k_Bar = "------------------------------------";
 
         private readonly List<MenuItem> m_MenuItems;
@@ -83,7 +89,7 @@
             {
                 Console.Clear();
                 showTitle();
-                Console.WriteLine("Please choose one of the options:");
+                Console.WriteLine(k_ChooseOption);
                 Console.WriteLine(GetLayout());
                 userChoice = getValidUserInput();
                 int trueIndex = userChoice - 1;
@@ -97,7 +103,7 @@
                     m_MenuItems[trueIndex].Show();
                     if (m_MenuItems[trueIndex] is MenuAction)
                     {
-                        Console.WriteLine("Press any key to return to main...");
+                        Console.WriteLine(k_ReturnToMain);
                         Console.ReadKey();
                     }
                 }
@@ -118,7 +124,7 @@
 
                 if (!validInput)
                 {
-                    Console.WriteLine("Please try again.");
+                    Console.WriteLine(k_TryAgian);
                 }
             }
             while (!validInput);
@@ -129,7 +135,12 @@
         private void showTitle()
         {
             Console.WriteLine(k_Bar);
-            Console.WriteLine("\t    {0}", Title);
+            int spaceSize = (k_Bar.Length - Title.Length) / 2;
+            for (int i = 0; i < spaceSize; i++)
+            {
+                Console.Write(' ');
+            }
+            Console.WriteLine(Title);
             Console.WriteLine(k_Bar);
         }
     }

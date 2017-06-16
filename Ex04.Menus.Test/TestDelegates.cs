@@ -17,7 +17,7 @@ namespace Ex04.Menus.Test
 
         private void buildMenu()
         {
-            m_MainMenu = new Menu(MenuStrings.k_MainMenu, Menu.eMenuType.MainMenu , 2);
+            m_MainMenu = new Menu(MenuStrings.k_MainMenu + " Delegates", Menu.eMenuType.MainMenu , 2);
             Menu subMenuActionInfo = createSubMenu(MenuStrings.k_ActionsAndInfo, 2, m_MainMenu);
             Menu subMenuDateTime = createSubMenu(MenuStrings.k_ShowDateOrTime, 2, m_MainMenu);
             Menu subActions = createSubMenu(MenuStrings.k_Actions, 2, subMenuActionInfo);

@@ -14,7 +14,7 @@
 
         private const string k_ChooseOption = "Please choose one of the options:";
 
-        private const string k_ReturnToMain = "Press any key to return to main...";
+        private const string k_ReturnToMain = "Press any key to return to menu...";
 
         private const string k_TryAgian = "Please try again.";
 

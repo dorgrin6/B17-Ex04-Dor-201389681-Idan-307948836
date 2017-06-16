@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ex04.Menus.Interfaces
+﻿namespace Ex04.Menus.Delegates
 {
-    public class Menu : MenuItem, IMenu
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class Menu : MenuItem
     {
         private const string k_Back = "Back";
 
@@ -14,7 +14,7 @@ namespace Ex04.Menus.Interfaces
 
         private const string k_Bar = "------------------------------------";
 
-        private readonly List<MenuItem> r_MenuItems;
+        private readonly List<MenuItem> m_MenuItems;
 
         private readonly eMenuType r_MenuType;
 
@@ -24,7 +24,7 @@ namespace Ex04.Menus.Interfaces
         public Menu(string i_Title, eMenuType i_MenuType, int i_SubMenusAmount)
             : base(i_Title)
         {
-            r_MenuItems = new List<MenuItem>(i_SubMenusAmount);
+            m_MenuItems = new List<MenuItem>(i_SubMenusAmount);
 
             r_MenuType = i_MenuType;
 
@@ -56,7 +56,7 @@ namespace Ex04.Menus.Interfaces
         public void AddMenuItem(MenuItem i_MenuItem)
         {
             i_MenuItem.ParentMenuItem = this;
-            r_MenuItems.Add(i_MenuItem);
+            m_MenuItems.Add(i_MenuItem);
         }
 
         public string GetLayout()
@@ -64,7 +64,7 @@ namespace Ex04.Menus.Interfaces
             int index = 1;
 
             StringBuilder layout = new StringBuilder();
-            foreach (MenuItem item in r_MenuItems)
+            foreach (MenuItem item in m_MenuItems)
             {
                 layout.AppendLine($"{index}) {item.Title}");
                 ++index;
@@ -94,8 +94,8 @@ namespace Ex04.Menus.Interfaces
                 }
                 else
                 {
-                    r_MenuItems[trueIndex].Show();
-                    if (r_MenuItems[trueIndex] is MenuAction)
+                    m_MenuItems[trueIndex].Show();
+                    if (m_MenuItems[trueIndex] is MenuAction)
                     {
                         Console.WriteLine("Press any key to return to main...");
                         Console.ReadKey();
@@ -114,7 +114,7 @@ namespace Ex04.Menus.Interfaces
             {
                 string input = Console.ReadLine();
                 validInput = int.TryParse(input, out result)
-                             && (result >= k_UserQuitIndex && result <= r_MenuItems.Count);
+                             && (result >= k_UserQuitIndex && result <= m_MenuItems.Count);
 
                 if (!validInput)
                 {

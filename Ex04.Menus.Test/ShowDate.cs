@@ -1,9 +1,8 @@
-﻿namespace Ex04.Menus.Test
+﻿using System;
+using Ex04.Menus.Interfaces;
+
+namespace Ex04.Menus.Test
 {
-    using System;
-
-    using Ex04.Menus.Interfaces;
-
     public class ShowDate : IAction
     {
         public void DoAction()

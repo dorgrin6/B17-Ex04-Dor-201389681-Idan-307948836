@@ -48,15 +48,15 @@
         private void buildMenu()
         {
             Menu subMenuActionInfo, subMenuDateTime, subActions;
-            m_MainMenu = new Menu("Main Menu", Menu.eMenuType.MainMenu, 2);
-            subMenuActionInfo = createSubMenu("Actions and Info", 2, m_MainMenu);
-            subMenuDateTime = createSubMenu("Show Date/Time", 2, m_MainMenu);
-            createAction(new DisplayVersion(), "Display version", subMenuActionInfo);
-            subActions = createSubMenu("Actions", 2, subMenuActionInfo);
-            createAction(new CountSpaces(), "Count Spaces", subActions);
-            createAction(new CharsCount(), "Chars Count", subActions);
-            createAction(new ShowTime(), "Show Time", subMenuDateTime);
-            createAction(new ShowDate(), "Show Date", subMenuDateTime);
+            m_MainMenu = new Menu(MenuStrings.k_MainMenu, Menu.eMenuType.MainMenu, 2);
+            subMenuActionInfo = createSubMenu(MenuStrings.k_ActionsAndInfo, 2, m_MainMenu);
+            subMenuDateTime = createSubMenu(MenuStrings.k_ShowDateOrTime, 2, m_MainMenu);
+            createAction(new DisplayVersion(), MenuStrings.k_DisplayVersion, subMenuActionInfo);
+            subActions = createSubMenu(MenuStrings.k_Actions, 2, subMenuActionInfo);
+            createAction(new CountSpaces(), MenuStrings.k_CountSpaces, subActions);
+            createAction(new CharsCount(), MenuStrings.k_CharsCount, subActions);
+            createAction(new ShowTime(), MenuStrings.k_ShowTime, subMenuDateTime);
+            createAction(new ShowDate(), MenuStrings.k_ShowDate, subMenuDateTime);
         }
 
         /*

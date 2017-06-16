@@ -38,7 +38,7 @@
         {
             foreach (IActionObserver observer in m_ActionObservers)
             {
-                observer.ReportExecutingAction(this.r_Action);
+                observer.ReportExecutingAction(r_Action);
                 //observer.ReportExecutingAction(Title);
             }
         }

@@ -11,7 +11,7 @@
             int result;
 
             result = Actions.GetUserInput().Length;
-            Console.WriteLine("Your sentence contains {0} chars.", result);
+            Console.WriteLine("Your sentence contains {0} characters.", result);
         }
     }
 }

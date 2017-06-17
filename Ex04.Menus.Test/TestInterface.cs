@@ -6,6 +6,11 @@
     {
         Menu m_MainMenu;
 
+        public TestInterface()
+        {
+            m_MainMenu = new Menu(MenuStrings.k_MainMenu + " Interfaces", Menu.eMenuType.MainMenu, 2);
+        }
+
         public void ReportExecutingAction(IAction i_Action)
         {
             i_Action.DoAction();
@@ -14,14 +19,13 @@
         public void Run()
         {
             buildMenu();
-
             m_MainMenu.Show();
         }
 
         private void buildMenu()
         {
             Menu subMenuActionInfo, subMenuDateTime, subActions;
-            m_MainMenu = new Menu(MenuStrings.k_MainMenu + " Interfaces", Menu.eMenuType.MainMenu, 2);
+
             subMenuActionInfo = createSubMenu(MenuStrings.k_ActionsAndInfo, 2, m_MainMenu);
             subMenuDateTime = createSubMenu(MenuStrings.k_ShowDateOrTime, 2, m_MainMenu);
             createAction(new DisplayVersion(), MenuStrings.k_DisplayVersion, subMenuActionInfo);
@@ -41,9 +45,10 @@
 
         private Menu createSubMenu(string i_Title, int i_SubMenusAmount, Menu i_ParentMenu)
         {
-            Menu sub = new Menu(i_Title, Menu.eMenuType.SubMenu, i_SubMenusAmount);
-            i_ParentMenu.AddMenuItem(sub);
-            return sub;
+            Menu subMenu = new Menu(i_Title, Menu.eMenuType.SubMenu, i_SubMenusAmount);
+            i_ParentMenu.AddMenuItem(subMenu);
+
+            return subMenu;
         }
     }
 }

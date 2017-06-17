@@ -1,6 +1,8 @@
-﻿namespace Ex04.Menus.Delegates
+﻿using System;
+
+namespace Ex04.Menus.Delegates
 {
-    public delegate void ActionNotifier();
+    public delegate void ActionNotifierDelegate();
 
     public class MenuAction : MenuItem
     {
@@ -9,10 +11,11 @@
         {
         }
 
-        public event ActionNotifier ActionDone;
+        public event ActionNotifierDelegate ActionDone;
 
         public override void Show()
         {
+            Console.Clear();
             onActionDone();
         }
 

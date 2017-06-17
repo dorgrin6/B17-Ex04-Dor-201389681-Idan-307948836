@@ -1,4 +1,6 @@
-﻿namespace Ex04.Menus.Interfaces
+﻿using System;
+
+namespace Ex04.Menus.Interfaces
 {
     using System.Collections.Generic;
 
@@ -26,6 +28,7 @@
 
         public override void Show()
         {
+            Console.Clear();
             r_Action.DoAction();
         }
 

@@ -1,7 +1,6 @@
 ﻿namespace Ex04.Menus.Test
 {
     using System;
-
     using Ex04.Menus.Interfaces;
 
     public class ShowTime : IAction

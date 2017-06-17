@@ -1,8 +1,9 @@
-﻿using System;
-using Ex04.Menus.Interfaces;
-
-namespace Ex04.Menus.Test
+﻿namespace Ex04.Menus.Test
 {
+    using System;
+
+    using Ex04.Menus.Interfaces;
+
     public class CountSpaces : IAction
     {
         public void DoAction()
@@ -10,7 +11,7 @@ namespace Ex04.Menus.Test
             int result;
 
             result = Actions.GetUserInput().Split(' ').Length - 1;
-            Console.WriteLine("Your sentence contains {0} spaces", result);
+            Console.WriteLine("Your sentence contains {0} spaces.", result);
         }
     }
 }

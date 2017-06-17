@@ -4,8 +4,8 @@
     {
         public static void Main()
         {
-            TestInterface MainMenuInterface = new TestInterface();
-            MainMenuInterface.Run();
+            TestInterface mainMenuInterface = new TestInterface();
+            mainMenuInterface.Run();
 
             TestDelegates mainMenuDelegates = new TestDelegates();
             mainMenuDelegates.Run();

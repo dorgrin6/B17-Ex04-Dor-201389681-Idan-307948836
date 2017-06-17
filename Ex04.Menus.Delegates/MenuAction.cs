@@ -1,21 +1,19 @@
-﻿using System;
-
-namespace Ex04.Menus.Delegates
+﻿namespace Ex04.Menus.Delegates
 {
     public delegate void ActionNotifier();
 
     public class MenuAction : MenuItem
     {
-        public event ActionNotifier ActionDone;
-
         public MenuAction(string i_Title)
             : base(i_Title)
         {
         }
 
+        public event ActionNotifier ActionDone;
+
         public override void Show()
         {
-            this.onActionDone();
+            onActionDone();
         }
 
         protected virtual void onActionDone()

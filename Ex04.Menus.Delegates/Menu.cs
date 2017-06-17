@@ -8,24 +8,23 @@
     {
         private const string k_Back = "Back";
 
-        private const string k_Exit = "Exit";
-
-        private const int k_UserQuitIndex = 0;
+        private const string k_Bar = "------------------------------------";
 
         private const string k_ChooseOption = "Please choose one of the options:";
+
+        private const string k_Exit = "Exit";
 
         private const string k_ReturnToMain = "Press any key to return to menu...";
 
         private const string k_TryAgian = "Please try again.";
 
-        private const string k_Bar = "------------------------------------";
+        private const int k_UserQuitIndex = 0;
 
         private readonly List<MenuItem> m_MenuItems;
 
         private readonly eMenuType r_MenuType;
 
         private readonly string r_QuitString;
-
 
         public Menu(string i_Title, eMenuType i_MenuType, int i_SubMenusAmount)
             : base(i_Title)
@@ -100,12 +99,7 @@
                 }
                 else
                 {
-                    m_MenuItems[trueIndex].Show();
-                    if (m_MenuItems[trueIndex] is MenuAction)
-                    {
-                        Console.WriteLine(k_ReturnToMain);
-                        Console.ReadKey();
-                    }
+                    handleMenuItem(trueIndex);
                 }
             }
             while (menuSession != eMenuSession.UserQuit);
@@ -130,6 +124,16 @@
             while (!validInput);
 
             return result;
+        }
+
+        private void handleMenuItem(int i_TrueIndex)
+        {
+            m_MenuItems[i_TrueIndex].Show();
+            if (m_MenuItems[i_TrueIndex] is MenuAction)
+            {
+                Console.WriteLine(k_ReturnToMain);
+                Console.ReadKey();
+            }
         }
 
         private void showTitle()

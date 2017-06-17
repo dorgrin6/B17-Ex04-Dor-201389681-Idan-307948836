@@ -8,11 +8,6 @@
 
         private readonly IAction r_Action;
 
-        /*
-        public MenuAction(string i_Title) : base(i_Title)
-        {
-        }*/
-
         public MenuAction(IAction i_Action, string i_Title)
             : base(i_Title)
         {
@@ -39,7 +34,6 @@
             foreach (IActionObserver observer in m_ActionObservers)
             {
                 observer.ReportExecutingAction(r_Action);
-                //observer.ReportExecutingAction(Title);
             }
         }
     }
